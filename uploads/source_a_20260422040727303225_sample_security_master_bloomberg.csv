@@ -1,0 +1,5 @@
+CUSIP,Security Name,Asset Class,Issue Date,Maturity Date,Coupon Rate,Outstanding Balance,Market Price,Currency,Country,Exchange
+123456789,ABC Corp Bond,Bond,2020-01-01,2030-01-01,3.50%,1000000,100.50,USD,USA,NYSE
+987654321,XYZ Corp Stock,Equity,2019-05-15,N/A,N/A,N/A,150.75,USD,USA,NASDAQ
+456123789,DEF Mortgage Backed,MBS,2021-03-01,2035-03-01,4.00%,500000,98.75,USD,USA,NYSE
+654789123,GHI Treasury Bond,Bond,2018-07-01,2028-07-01,2.00%,250000,102.25,USD,USA,NYSE

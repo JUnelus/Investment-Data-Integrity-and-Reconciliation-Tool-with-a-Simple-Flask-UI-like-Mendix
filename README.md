@@ -7,11 +7,20 @@ This project is a web-based tool developed using Python, Flask, and Bootstrap. I
 
 ## Features
 
-- Upload security master data files (CSV)
-- Automated reconciliation of uploaded data to find discrepancies
-- Display discrepancies in the web UI
-- Download a detailed reconciliation report (Excel)
-- Built using Flask, Pandas, Bootstrap for a responsive UI, and custom CSS styling
+- Upload and compare **two security master data files** (CSV)
+- Run a **bundled demo reconciliation** using the included Bloomberg and ICE sample files
+- Automated reconciliation engine with:
+  - required-column validation
+  - duplicate CUSIP detection
+  - record coverage checks (missing in Source A / Source B)
+  - field-level comparison across market price, outstanding balance, coupon rate, exchange, and more
+- Dynamic dashboard UI with:
+  - KPI summary cards
+  - issue and severity charts
+  - searchable and sortable discrepancy workbench
+  - no full-page reload after processing
+- Download a multi-sheet Excel reconciliation report
+- Built using Flask, Pandas, Bootstrap, DataTables, Chart.js, and custom CSS styling
 
 ## Technologies Used
 
@@ -66,9 +75,22 @@ flask_ui_project/
 
 ## Usage
 
-1. Upload a security master CSV file.
-2. The tool will automatically reconcile the data and display any discrepancies found.
-3. You can also download a reconciliation report in Excel format for further analysis.
+1. Start the Flask app.
+2. Upload both a **Source A** and **Source B** security master CSV file, or click **Run bundled demo**.
+3. Review the live reconciliation dashboard for:
+   - match rate
+   - source-only records
+   - issue distribution
+   - detailed discrepancy rows
+4. Download the generated Excel report for audit and offline analysis.
+
+## Testing
+
+Run the lightweight automated tests with:
+
+```bash
+pytest
+```
 
 ## Example CSV Structure
 
@@ -81,4 +103,4 @@ CUSIP,Security Name,Asset Class,Issue Date,Maturity Date,Coupon Rate,Outstanding
 456123789,DEF Mortgage Backed,MBS,2021-03-01,2035-03-01,4.00%,500000,98.75,USD,USA,NYSE
 654789123,GHI Treasury Bond,Bond,2018-07-01,2028-07-01,2.00%,250000,102.25,USD,USA,NYSE
 ```
-![img.png](img.png)
+![img_2.png](img_2.png)
